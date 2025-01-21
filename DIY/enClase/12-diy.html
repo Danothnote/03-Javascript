@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If/else</title>
+</head>
+<body>
+    <dialog>
+        <p>Escriba su número de la suerte</p>
+        <input type="text" id="numero">
+        <button onclick="suerte()">Aceptar</button>
+        <button onclick="dialogClose()">Cancelar</button>
+    </dialog>
+    <p id="details"></p>
+    <button onclick="dialogOpen()">clic me</button>
+</body>
+<script>
+    function dialogOpen() {
+        document.querySelector('dialog').showModal();
+    }
+    function dialogClose() {
+        document.querySelector('dialog').close();
+    }
+    function suerte() {
+        let numero = parseInt(document.getElementById('numero').value);
+        if (numero === 777) {
+            document.getElementById('details').setAttribute("style", "background-color: yellow; color: blue; border: 1px solid green;");
+            document.getElementById('details').innerHTML = "$1000000";
+        } else {
+            document.getElementById('details').setAttribute("style", "background-color: black; color: yellow; border: 5px solid red;");
+            document.getElementById('details').innerHTML = "Mi nombre es Daniel Salazar";
+        }
+        dialogClose();
+    }
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR Loops</title>
+</head>
+<body>
+    <dialog>
+        <p>Escribe cinco números</p>
+        <input type="text" name="num"><br>
+        <input type="text" name="num"><br>
+        <input type="text" name="num"><br>
+        <input type="text" name="num"><br>
+        <input type="text" name="num"><br>
+        <button onclick="suma()">Aceptar</button>
+        <button onclick="dialogClose()">Cerrar</button>
+    </dialog>
+    <button onclick="dialogOpen()">Suma de 5 números</button>
+    <p id="sum"></p>
+</body>
+<script>
+    const dialogOpen = () => {
+        document.querySelector('dialog').showModal();
+    }
+    const dialogClose = () => {
+        document.querySelector('dialog').close();
+    }
+    let num = document.getElementsByName("num");
+    const suma = () => {
+        let sum = 0;
+        let items = "";
+        for (let index = 0; index < num.length; index++) {
+            sum += parseInt(num[index].value);
+            items += `${num[index].value}, `;
+        }
+        document.getElementById("sum").innerHTML = `La suma de los números ${items} es: ${sum}`;
+        dialogClose();
+    }
+</script>
+</html>

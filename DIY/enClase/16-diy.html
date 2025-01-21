@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR Loops</title>
+</head>
+<body>
+    <dialog>
+        <p>Escribe cuatro números</p>
+        <input type="text" name="num"><br>
+        <input type="text" name="num"><br>
+        <input type="text" name="num"><br>
+        <input type="text" name="num"><br>
+        <button onclick="pares()">Aceptar</button>
+        <button onclick="dialogClose()">Cerrar</button>
+    </dialog>
+    <button onclick="dialogOpen()">count even</button>
+    <p id="details"></p>
+</body>
+<script>
+    const dialogOpen = () => {
+        document.querySelector("dialog").showModal();
+    }
+    const dialogClose = () => {
+        document.querySelector("dialog").close();
+    }
+    const pares = () => {
+        let count = 0;
+        let numbers = document.getElementsByName("num");
+        numbers.forEach(num => {
+            if ((num.value % 2) === 0) {
+                count += 1;
+            }
+        });
+        document.getElementById("details").innerHTML = `Hay ${count} números pares`;
+        dialogClose();
+    }
+</script>
+</html>

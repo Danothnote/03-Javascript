@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazlo tu 7</title>
+    <style>
+        img {
+            display: none;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <dialog>
+        <input type="text" id="numero"><br>
+        <button onclick="imagenes()">Aceptar</button>
+        <button onclick="dialogClose()">Cerrar</button>
+        <button onclick="reset()">Reset</button>
+    </dialog>
+    <button onclick="dialogOpen()">clic me</button><br>
+    <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/001.png" alt="bulbasaur" id="a1">
+    <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/004.png" alt="charmander" id="a2">
+    <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/007.png" alt="squirtle" id="a3">
+</body>
+<script>
+    let dialogOpen = () => {
+        document.querySelector('dialog').showModal();
+    }
+    let dialogClose = () => {
+        document.querySelector('dialog').close();
+    }
+    let imagenes = () => {
+        let num = parseInt(document.getElementById("numero").value);
+        if (num < 100) {
+            document.getElementById("a1").style.display = "inline";
+            document.getElementById("a2").style.display = "inline";
+            document.getElementById("a3").style.display = "inline";
+            dialogClose();
+        } else if (num === 100) {
+            document.getElementById("a1").style.display = "inline";
+            document.getElementById("a2").style.display = "inline";
+            document.getElementById("a3").style.display = "none";
+            dialogClose();
+        } else {
+            document.getElementById("a1").style.display = "inline";
+            document.getElementById("a2").style.display = "none";
+            document.getElementById("a3").style.display = "none";
+            dialogClose();
+        }
+    }
+    let reset = () => {
+        document.getElementById("a1").style.display = "none";
+        document.getElementById("a2").style.display = "none";
+        document.getElementById("a3").style.display = "none";
+        dialogClose();
+    }
+</script>
+</html>

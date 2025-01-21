@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <p id="details"></p>
+    </div>
+    <button onclick="enlarge()">clic me</button>
+    <button onclick="reset()">reset</button>
+</body>
+<script>
+    function reset() {
+        document.getElementById('container').setAttribute("style", "background-color: yellow; width: 10px; height: 20px");
+    }
+    function enlarge() {
+        let width = parseInt(document.getElementById('container').style.width.split("px")[0]) + 10;
+        document.getElementById('container').style.width = `${width}px`;
+    }
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+
+<body>
+    <h1 id="titulo">Ciclo del 1 al 20</h1>
+</body>
+<script>
+    
+    for (let index = 0; index < 20; index++) {
+        let parrafo = document.createElement("p");
+        parrafo.innerHTML = index + 1;
+        document.body.appendChild(parrafo);
+    }
+</script>
+
+</html>

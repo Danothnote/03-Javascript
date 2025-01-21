@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For anidado</title>
+</head>
+
+<body>
+    <p>Ingrese un número para generar tablas de multiplicar del 1 al 10</p>
+    <input type="text" id="numero">
+    <button onclick="generate()">Generar</button>
+    <p id="tablaMultiplicar"></p>
+</body>
+<script>
+    const generate = () => {
+        document.getElementById("tablaMultiplicar").innerText = "";
+        let num = parseInt(document.getElementById("numero").value);
+        for (let i = 1; i <= num; i++) {
+            for (let j = 0; j < 10; j++) {
+                document.getElementById("tablaMultiplicar").innerText += `${i} x ${j + 1} = ${i * (j + 1)} \n`;
+            }
+            document.getElementById("tablaMultiplicar").innerText += "\n\n";
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <input type="text" id="num3">
+    <p id="myp"></p>
+    <button onclick="promedio()">Promedio</button>
+</body>
+<script>
+    function promedio() {
+        num1 = document.getElementById("num1").value;
+        num2 = document.getElementById("num2").value;
+        num3 = document.getElementById("num3").value;
+        let suma = parseInt(num1) + parseInt(num2) + parseInt(num3);
+        let promedio = suma / 3;
+        alert(promedio);
+        document.getElementById("myp").innerHTML = "El promedio es: " + promedio;
+    }
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+    <style>
+        img {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <select name="pokemon" id="pokemon">
+        <option value="0">Elegir Pokémon</option>
+        <option value="1">Bulbasaur</option>
+        <option value="2">Charmander</option>
+        <option value="3">Squirtle</option>
+    </select><br>
+    <button onclick="elegir()">Aceptar</button>
+    <button onclick="reset()">Reset</button>
+    <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/001.png" alt="bulbasaur"
+        id="a1">
+    <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/004.png" alt="charmander"
+        id="a2">
+    <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/007.png" alt="squirtle"
+        id="a3">
+</body>
+<script>
+    let elegir = () => {
+        let num = parseInt(document.getElementById("pokemon").value);
+        switch (num) {
+            case 1:
+                reset();
+                document.getElementById("a1").style.display = "block";
+                document.body.style.backgroundColor = "#50BA48"
+                break;
+            case 2:
+                reset();
+                document.getElementById("a2").style.display = "block";
+                document.body.style.backgroundColor = "#F0763E"
+                break;
+            case 3:
+                reset();
+                document.getElementById("a3").style.display = "block";
+                document.body.style.backgroundColor = "#4BC4F2"
+                break;
+            default:
+                alert("Pokemon no válido");
+        }
+    }
+    let reset = () => {
+        document.getElementById("a1").style.display = "none";
+        document.getElementById("a2").style.display = "none";
+        document.getElementById("a3").style.display = "none";
+        document.body.style.backgroundColor = "white"
+    }
+</script>
+
+</html>

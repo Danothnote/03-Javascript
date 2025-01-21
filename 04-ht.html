@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazlo tu 4</title>
+</head>
+<body>
+    <dialog id="dialog">
+        <p>Coloque un número para probar su suerte</p>
+        <input type="text" id="numero">
+        <button onclick="suerte()">Aceptar</button>
+        <button onclick="dialogClose()">Cerrar</button>
+    </dialog>
+    <p id="details"></p>
+    <button onclick="dialogOpen()">clic me</button>
+</body>
+<script>
+    const dialogOpen = () => {
+        let dialog = document.getElementById("dialog");
+        dialog.showModal();
+    }
+    const dialogClose = () => {
+        let dialog = document.getElementById("dialog");
+        dialog.close();
+    }
+    const suerte = () => {
+        let num = parseInt(document.getElementById("numero").value);
+        if (num === 777) {
+            document.getElementById("details").setAttribute("style", "background-color: yellow; color: blue; border: 5px solid black");
+            document.getElementById("details").innerHTML = "$1000000";
+            dialogClose();
+        } else {
+            document.getElementById("details").setAttribute("style", "background-color: white; color: black; border: 0px");
+            document.getElementById("details").innerHTML = "Perdiste";
+            dialogClose();
+        }
+    }
+</script>
+</html>

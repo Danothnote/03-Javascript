@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR Loops</title>
+</head>
+<body>
+    <dialog>
+        <p>Escriba 5 salarios</p>
+        <input type="text" name="salario"><br>
+        <input type="text" name="salario"><br>
+        <input type="text" name="salario"><br>
+        <input type="text" name="salario"><br>
+        <input type="text" name="salario"><br>
+        <button onclick="operar()">Aceptar</button>
+        <button onclick="dialogClose()">Cerrar</button>
+    </dialog>
+
+    <button onclick="dialogOpen()">compute sum, Average, above 1000</button>
+    
+    <p id="salarios"></p>
+    <p id="sum"></p>
+    <p id="average"></p>
+    <p id="above1000"></p>
+</body>
+<script>
+    const dialogOpen = () => {
+        document.querySelector('dialog').showModal();
+    }
+
+    const dialogClose = () => {
+        document.querySelector('dialog').close();
+    }
+
+    /* Variables para las funciones */
+    let suma = 0;
+    let promedio = 0;
+    let above = "";
+    let salarios = "";
+    let inputSalario = document.getElementsByName("salario");
+
+    /* Suma de los salarios */
+    const sum = (salario) => {
+        suma += salario;
+    }
+
+    /* Promedio de los salarios */
+    const average = (suma) => {
+        promedio = suma / inputSalario.length;
+    }
+
+    /* Salarios superiores a $1000 */
+    const above1000 = (salario) => {
+        if (salario > 1000) {
+            above += `$${salario}, `;
+        }
+    }
+
+    /* Función que invoca a las operaciones matemáticas*/
+    const operar = () => {
+        /* Ciclo para iterar cada salario */
+        for (let index = 0; index < inputSalario.length; index++) {
+            /* Se pasa el salario a la función de sumar */
+            sum(parseInt(inputSalario[index].value));
+
+            /* Se pasa el salario a la función de above */
+            above1000(inputSalario[index].value);
+
+            /* Se escriben los salarios superiores a $1000 en una variable */
+            salarios += `$${inputSalario[index].value}, `;
+        }
+        /* Se pasa la suma de los salarios a la función de promedio */
+        average(suma);
+
+        /* Presentación de los resultados */
+        document.getElementById("salarios").innerHTML = `Los salarios son: ${salarios}`;
+        document.getElementById("sum").innerHTML = `La suma de los salarios es: $${suma}`;
+        document.getElementById("average").innerHTML = `El promedio de los salarios es: $${promedio}`;
+        document.getElementById("above1000").innerHTML = `Los salarios mayores a $1000 son: ${above}`;
+        dialogClose();
+    }
+</script>
+</html>

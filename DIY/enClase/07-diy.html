@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="myDiv"></div>
+    <span>Background</span>
+    <input type="color" name="background" id="background">
+    <button onclick="selectBackColor()">Cambiar color de fondo</button>
+    <br>
+    <span>Texto</span>
+    <input type="color" name="text" id="text">
+    <button onclick="selectTextColor()">Cambiar color de texto</button>
+</body>
+<script>
+    function selectBackColor(){
+        let color = document.getElementById("background").value;
+        document.getElementById("myDiv").style.backgroundColor = color;
+    }
+
+    function selectTextColor(){
+        let color = document.getElementById("text").value;
+        document.getElementsByTagName("body")[0].style.color = color;
+    }
+</script>
+</html>

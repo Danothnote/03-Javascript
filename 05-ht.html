@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazlo tu 5</title>
+</head>
+<body>
+    <div id="box"></div>
+    <p id="details"></p>
+    <button onclick="enlarge()">clic me</button>
+    <button onclick="reset()">reset</button>
+</body>
+<script>
+    const reset = () => {
+        document.getElementById("box").setAttribute("style", "background-color: yellow; width: 10px; height: 10px");
+    }
+    const enlarge = () => {
+        let width = document.getElementById("box").style.width;
+        width = parseInt(width.split("px")[0]);
+        document.getElementById("box").style.width = `${width + 10}px`;
+        if (width > 500) {
+            document.body.style.backgroundColor = "brown";
+        } else {
+            document.body.style.backgroundColor = "blue";
+        }
+    }
+</script>
+</html>
