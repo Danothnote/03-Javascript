@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirámide con for</title>
+</head>
+
+<body>
+    <h1>Pirámide</h1>
+    <p>Escriba la cantidad de filas que quisiera que tenga la pirámide</p>
+    <input type="text" id="filas">
+    <button onclick="generarPiramide()">Generar</button>
+    <p id="piramide"></p>
+</body>
+<script>
+    function generarPiramide() {
+        // Obtiene el número de filas de la pirámide desde el input del usuario
+        let filas = parseInt(document.getElementById("filas").value);
+        // Se inicializa la pirámide
+        let piramide = "";
+
+        // Dibuja la pirámide en el HTML
+        for (let i = 1; i <= filas; i++) {
+            let columnas = (i * 2) - 1;
+            let espacios = "";
+            let asteriscos = "";
+
+            // Agrega los espacios necesarios antes y después de los asteriscos para formar la pirámide
+            for (let j = (filas - i); j > 0; j--) {
+                espacios += "_";
+            }
+
+            // Agrega los asteriscos para formar la pirámide
+            for (let k = 1; k <= columnas; k++) {
+                asteriscos += "*";
+            }
+
+            // Agrega la fila al string de la pirámide
+            piramide += espacios + asteriscos + espacios + "<br>";
+        }
+
+        // Muestra la pirámide en el HTML
+        document.getElementById("piramide").innerHTML = piramide;
+    }
+</script>
+
+</html>
