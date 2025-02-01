@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For</title>
+</head>
+<body>
+    <button onclick="operate()">compute sum, Average y  above 1000</button>
+    <p id="numbers"></p>
+    <p id="sum"></p>
+    <p id="average"></p>
+    <p id="above"></p>
+</body>
+<script>
+    const operate = () => {
+        let numbers = '';
+        let sum = 0;
+        let above1000 = 0;
+        for (let i = 1; i <= 5; i++) {
+            let num = parseInt(prompt('Ingresa un salario'));
+            numbers += num + ', ';
+            sum += num;
+            if (num > 1000) {
+                above1000++;
+            }
+        }
+        let promedio = sum / 5;
+        document.getElementById('numbers').innerHTML = 'Los salarios ingresados fueron: ' + numbers;
+        document.getElementById('sum').innerHTML = 'La suma es: ' + sum;
+        document.getElementById('average').innerHTML = 'El promedio es: ' + promedio;
+        document.getElementById('above').innerHTML = 'La cantidad de salarios mayores a 1000 es: ' + above1000;
+    }
+</script>
+</html>

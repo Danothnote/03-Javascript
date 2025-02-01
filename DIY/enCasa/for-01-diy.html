@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For</title>
+</head>
+
+<body>
+    <button onclick="count()">count even</button>
+    <h1>Los números fueron:</h1>
+    <p id="numbers"></p>
+    <p id="details"></p>
+</body>
+<script>
+    const count = () => {
+        let numbers = '';
+        let pares = 0;
+        for (let index = 0; index < 4; index++) {
+            let num = parseInt(prompt('Ingresa un número'));
+            numbers += num + ', ';
+            if (num % 2 == 0) {
+                pares++;
+            }
+        }
+        document.getElementById('numbers').innerHTML = numbers;
+        document.getElementById('details').innerHTML = 'La cantidad de números pares es: ' + pares;
+    }
+</script>
+
+</html>

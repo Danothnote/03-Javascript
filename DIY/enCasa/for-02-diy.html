@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For</title>
+</head>
+<body>
+    <button onclick="suma()">Suma de 5 números</button>
+    <p id="numbers"></p>
+    <p id="sum"></p>
+</body>
+<script>
+    const suma = () => {
+        let numbers = '';
+        let sum = 0;
+        for (let i = 1; i <= 5; i++) {
+            let num = parseInt(prompt('Ingresa un número'));
+            numbers += num + ', ';
+            sum += num;
+        }
+        document.getElementById('numbers').innerHTML = 'Los números ingresados fueron: ' + numbers;
+        document.getElementById('sum').innerHTML = 'La suma es: ' + sum;
+    }
+</script>
+</html>
