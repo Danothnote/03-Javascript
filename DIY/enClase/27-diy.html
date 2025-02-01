@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <button onclick="maxBetween3numbers()">find max</button>
+    <p id="max"></p>
+</body>
+<script>
+    const maxNumber = function (array) {
+        document.getElementById("max").innerHTML = Math.max(...array);
+    }
+    
+    const maxBetween3numbers = function () {
+        let array = [];
+        for (let index = 0; index < 3; index++) {
+            array.push(prompt("Ingresa un número"));
+        }
+        maxNumber(array);
+    }
+</script>
+</html>
