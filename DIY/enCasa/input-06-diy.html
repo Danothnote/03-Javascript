@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+<style>
+    div {
+        width: 20%;
+        height: 150px;
+        border: 3px solid blue;
+        text-align: center;
+        padding: 5px;
+        font-size: 100px;
+        margin-left: 40%;
+        margin-top: 10%;
+    }
+</style>
+<body>
+    <div id="num" onclick="ryomNumber()">0</div>
+</body>
+<script>
+    const ryomNumber = () => {
+        document.getElementById('num').innerHTML = Math.floor(Math.random() * 101);
+    }
+</script>
+
+</html>

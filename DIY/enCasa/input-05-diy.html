@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div id="muDiv" class="box"></div>
+    <h1>Escoja un color de fondo para el div</h1>
+    <input type="color" id="backgroundColor">
+    <button onclick="selectBackColor()">Fondo</button>
+    <h1>Escoja un color del texto</h1>
+    <input type="color" id="textColor">
+    <button onclick="selectTextColor()">Texto</button>
+</body>
+<script>
+    const selectBackColor = () => {
+        document.getElementById('muDiv').style.backgroundColor = document.getElementById('backgroundColor').value;
+    }
+    const selectTextColor = () => {
+        document.body.style.color = document.getElementById('textColor').value;
+    }
+</script>
+</html>

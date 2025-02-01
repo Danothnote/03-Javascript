@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+<body>
+    <input type="text" id="city">
+    <input type="text" id="country">
+    <p id="myp"></p>
+    <button onclick="detalles()">Detalles</button>
+</body>
+<script>
+    const detalles = () => {
+        let city = document.getElementById('city').value;
+        let country = document.getElementById('country').value;
+        alert(`Ciudad: ${city}\nPaís: ${country}`);
+        document.getElementById('myp').innerHTML = `Detalles de la ciudad: ${city} - ${country}`;
+    }
+</script>
+</html>
