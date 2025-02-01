@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If else</title>
+</head>
+<body>
+    <button onclick="enlarge()">click me</button>
+    <button onclick="reset()">reset</button>
+    <p id="details"></p>
+</body>
+<script>
+    const reset = () => {
+        document.getElementById('details').setAttribute('style', 'width: 10px; height: 30px; background-color: yellow;');
+        document.body.style.backgroundColor = 'blue';
+        document.getElementById('details').innerHTML = 'width: 10px';
+    }
+    const enlarge = () => {
+        let width = parseInt(document.getElementById('details').style.width.split('px')[0]);
+        width += 10;
+        document.getElementById('details').style.width = `${width}px`;
+        document.getElementById('details').innerHTML = `width: ${width}px`;
+        if (width > 500) {
+            document.body.style.backgroundColor = 'brown';
+        } else {
+            document.body.style.backgroundColor = 'blue';
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If else</title>
+</head>
+<body>
+    <input type="text" id="num">
+    <button onclick="divisible()">¿Es divisible para 2?</button>
+</body>
+<script>
+    const divisible = () => {
+        let num = document.getElementById('num').value;
+        return (num % 2 === 0) ? alert('Es divisible para 2') : alert('No es divisible para 2');
+    }
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If else</title>
+</head>
+<body>
+    <button onclick="suma()">click me</button>
+    <p id="details"></p>
+</body>
+<script>
+    const suma = () => {
+        let suma = 0;
+        num1 = prompt('Ingrese un número');
+        num2 = prompt('Ingrese otro número');
+        suma = parseInt(num1) + parseInt(num2);
+        if (suma > 100) {
+            document.getElementById('details').innerHTML = `La suma de ${num1} y ${num2} es: ${suma}`;
+            document.getElementById('details').style.color = 'blue';
+        } else {
+            document.getElementById('details').innerHTML = `La suma de ${num1} y ${num2} es: ${suma}`;
+            document.getElementById('details').style.color = 'red';
+        }
+    }
+</script>
+</html>

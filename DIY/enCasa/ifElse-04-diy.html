@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If else</title>
+</head>
+<body>
+    <button onclick="suerte()">Click me</button>
+    <p id="details"></p>
+</body>
+<script>
+    const suerte = () => {
+        num = parseInt(prompt('Ingrese un número'));
+        if (num === 7) {
+            document.getElementById('details').innerHTML = '$1000000';
+            document.getElementById('details').setAttribute('style', 'color: blue; background-color: yellow; border: 1px solid green');
+        } else {
+            document.getElementById('details').innerHTML = 'Daniel Salazar';
+            document.getElementById('details').setAttribute('style', 'color: yellow; background-color: black; border: 5px solid red');
+        }
+    }
+</script>
+</html>
