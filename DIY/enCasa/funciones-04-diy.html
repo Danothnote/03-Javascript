@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+<body>
+    <button onclick="mostrar()">Mostrar número mayor</button>
+</body>
+<script>
+    function mostrar() {
+        arr=[1,6,2,9];
+        numeroMayor(arr);
+    }
+
+    function numeroMayor (arr) {
+        return alert(Math.max(...arr));
+    }
+</script>
+</html>
