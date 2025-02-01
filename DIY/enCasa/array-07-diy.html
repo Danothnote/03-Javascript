@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <button onclick="add()">Add numbers to array</button>
+    <p id="numbers"></p>
+</body>
+<script>
+    const add = () => {
+        let arr = [];
+        for (let index = 0; index < 5; index++) {
+            let num = parseInt(prompt("Enter a number"));
+            arr.push(num);
+        }
+        document.getElementById('numbers').innerHTML = 'Los números fueron: ' + arr;
+    }
+</script>
+</html>
