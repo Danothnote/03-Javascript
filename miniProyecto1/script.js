@@ -39,7 +39,7 @@ const play = () => {
     if (counter <= 3) {
         const word = arrWord[i];
         const message = document.querySelector(".message");
-        const letter = document.getElementById("input").value;
+        const letter = document.getElementById("input").value.toLowerCase();
         if (!letter) {
             message.textContent = "No Letter 🥵"
             score -= 2;
